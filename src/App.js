@@ -11,7 +11,7 @@ class App extends React.Component {
 
   render() {
     const AboutMeButton = (
-      <InfoButton title="About Me" isDefaultButton={true}>
+      <InfoButton title="About Me" isSelected={true} id="aboutme">
         <h2>About Me</h2>
         <p>I am a undergrad computer science major currently studying at the University of California - Los Angeles.
           I am deeply fascinated with computer science and software engineering because I love solving difficult challenges.
@@ -26,7 +26,7 @@ class App extends React.Component {
     );
 
     const ClusterAIButton = (
-      <InfoButton title="ClusterAI">
+      <InfoButton title="ClusterAI" id="cluster">
         <h3>Cluster AI</h3>
         <img src={clusterAI_demo} alt="Demonstration of clusterAI website from LAHacks" className="projectImg"/>
         <p>Project that I worked on during the LAHacks hackathon in March 2021. ClusterAI is a visualization tool that represents research papers as spherical nodes in 3D space.
@@ -45,8 +45,27 @@ class App extends React.Component {
       </InfoButton>
     );
 
+    const ColoniaButton = (
+      <InfoButton title="Colonia Unity Game" id="colonia">
+        <h3>Colonia Unity Game</h3>
+        <p></p>
+      </InfoButton>
+    );
+
+    const CookyAppButton = (
+      <InfoButton title = "Cooky Website" id="cooky">
+
+      </InfoButton>
+    );
+
+    const MusicGenreButton = (
+      <InfoButton title = "Music Genre Classification" id="musicgenre">
+
+      </InfoButton>
+    );
+
     const ExperienceButton = (
-      <InfoButton title="Experience">
+      <InfoButton title="Experience" id="experience">
         <h2>Experience</h2>
         <p>Almost all of my projects come from personal projects that were designed with the intent of learning something new.
           My early expeditions into computer science involved understanding the basics of programming and object-oriented design.
@@ -58,7 +77,7 @@ class App extends React.Component {
           But this time, it's sole purpose was to be large, so I could experience working with a large project and with various frameworks. The game uses the Unity game engine.
           I have been working on and off on this project for a year, accumulating over 7,800 lines of code. Although the project is nowhere near complete nor up to industry standard,
           I have learned a great deal about software design and engineering.</p>
-        <InfoBox defaultText="Select a project for further information." buttons={[ClusterAIButton]}/>
+        <InfoBox defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton]}/>
       </InfoButton>
     );
 
@@ -67,7 +86,7 @@ class App extends React.Component {
         <h1>Victor Wen</h1>
 
         {/* Menu of buttons. Click to display text below */}
-        <InfoBox buttons={[AboutMeButton, ExperienceButton]}/>
+        <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme"/>
       </div>
     );
   }
