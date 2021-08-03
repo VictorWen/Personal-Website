@@ -18,7 +18,14 @@ export class InfoBox extends React.Component {
         return (
             <div>
                 <span className = "buttonMenu">
-                    {this.props.buttons.map(item => React.cloneElement(item, {key: item.props.id, id: item.props.id, onSelect: (btn) => this.setSelectedButton(btn), isSelected: item.props.id === this.state.selected}))}
+                    {this.props.buttons.map(item => React.cloneElement(item, 
+                        {
+                            key: item.props.id, 
+                            id: item.props.id, 
+                            onSelect: (btn) => this.setSelectedButton(btn), 
+                            isSelected: item.props.id === this.state.selected
+                        }
+                    ))}
                 </span>
                 <div className = "infobox">
                     {this.state.info}
@@ -32,16 +39,23 @@ export class InfoButton extends React.Component {
     constructor(props) {
         super(props);
         if (this.props.children)
-            this.state = {info: this.props.children.map((item, index) => item.props)};
+            if (Array.isArray(this.props.children))
+                this.state = {info: this.props.children.map((item, index) => item.props)};
+            else
+                this.state = {info: this.props.children.props};
         if (props.isSelected)
             this.props.onSelect(this);
         this.isReactElement=true;
     }
 
     saveInfo(index, props) {
-        let copy = this.state.info.slice();
-        copy[index] = props;
-        this.setState({info: copy});
+        if (index === -1)
+            this.setState({info: props})
+        else {
+            let copy = this.state.info.slice();
+            copy[index] = props;
+            this.setState({info: copy});
+        }
     }
 
     render() {
@@ -52,7 +66,19 @@ export class InfoButton extends React.Component {
 
     getInfo() {
         if (this.props.children)
-            return this.props.children.map((item, index) => React.cloneElement(item, {...this.state.info[index], saveChanges: (props) => this.saveInfo(index, props), key: index}));
+            if (Array.isArray(this.props.children))
+                return this.props.children.map((item, index) => React.cloneElement(item, 
+                    {...this.state.info[index], 
+                        saveChanges: (props) => this.saveInfo(index, props), 
+                        key: index
+                    }));
+            else
+                return React.cloneElement(this.props.children, 
+                    {
+                        ...this.state.info,
+                        saveChanges: (props) => this.saveInfo(-1, props),
+                        key: "child"
+                    });
         return undefined;
     }
 }
