@@ -2,21 +2,27 @@ import React from 'react';
 import './App.css'
 
 export class InfoBox extends React.Component {
-    state = { info: <h3>{this.props.defaultText}</h3>, selected: this.props.selected }
-
-    setInfo(html) {
-        this.setState({ info: html });
-    }
+    state = { info: <h3>{this.props.defaultText}</h3>, selected: this.props.selected, animation: false }
 
     setSelectedButton(button) {
         if (this.props.saveChanges)
             this.props.saveChanges({ ...this.props, selected: button.props.id });
-        this.setState({ info: button.getInfo(), selected: button.props.id });
+        this.setState({ info: button.getInfo(), selected: button.props.id, animation: true});
+    }
+
+    onAnimationEnd() {
+        this.setState({animation: false})
     }
 
     render() {
+        let infoboxClassNames = "infobox";
+        if (this.props.innerClassName)
+            infoboxClassNames += " " + this.props.innerClassName;
+        if (this.state.animation)
+            infoboxClassNames += " infobox-animation"
+
         return (
-            <div className="outerInfobox text-align-center">
+            <div className={"outerInfobox text-align-center " + this.props.className}>
                 <div className="buttonMenu">
                     <span>
                         {this.props.buttons.map(item => React.cloneElement(item,
@@ -29,8 +35,10 @@ export class InfoBox extends React.Component {
                         ))}
                     </span>
                 </div>
-                <div className="infobox">
-                    {this.state.info}
+                <div>
+                    <div className={infoboxClassNames} onAnimationEnd={() => this.onAnimationEnd()}>
+                        {this.state.info}
+                    </div>
                 </div>
             </div>
         )

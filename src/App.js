@@ -83,7 +83,7 @@ class App extends React.Component {
                     But this time, it's sole purpose was to be large, so I could experience working with a large project and with various frameworks. The game uses the Unity game engine.
                     I have been working on and off on this project for a year, accumulating over 7,800 lines of code. Although the project is nowhere near complete nor up to industry standard,
                     I have learned a great deal about software design and engineering.</p>
-                <InfoBox defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton, PersonalWebsiteButton]} />
+                <InfoBox innerClassName="border-1-black" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton, PersonalWebsiteButton]} />
             </InfoButton>
         );
 

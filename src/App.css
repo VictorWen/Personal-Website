@@ -9,17 +9,32 @@
 }
 
 .infobox {
-    border: 1px solid black;
-    padding: 10px;
     display: inline-block;
+    padding: 10px;
     width: 90%;
 }
 
+.infobox-animation {
+    animation-duration: 0.5s;
+    animation-name: enlarge;
+}
+
 p {
+    /* font-size: 17px; */
     text-align: left;
     padding: 5px;
 }
 
 .text-align-center {
     text-align: center;
+}
+
+.border-1-black {
+    border: 1px solid black;
+}
+
+@keyframes enlarge {
+    from {
+        font-size: 20px;
+    }
 }
