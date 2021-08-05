@@ -7,7 +7,14 @@ export class InfoBox extends React.Component {
     setSelectedButton(button) {
         if (this.props.saveChanges)
             this.props.saveChanges({ ...this.props, selected: button.props.id });
-        this.setState({ info: button.getInfo(), selected: button.props.id, animation: true});
+        if (this.state.animationTimeout)
+            clearTimeout(this.state.animationTimeout);
+        this.setState({ 
+            info: button.getInfo(), 
+            selected: button.props.id, 
+            animation: false, 
+            animationTimeout: setTimeout(() => this.setState({animation: true, animationTimeout: null}), 10)
+        });
     }
 
     onAnimationEnd() {
@@ -19,10 +26,19 @@ export class InfoBox extends React.Component {
         if (this.props.innerClassName)
             infoboxClassNames += " " + this.props.innerClassName;
         if (this.state.animation)
-            infoboxClassNames += " infobox-animation"
+            infoboxClassNames += " infobox-animation";
+
+        let outerClassName = "outerInfobox text-align-center";
+        if (this.props.className)
+            outerClassName += " " + this.props.className;
+        if (this.state.animation) {
+            outerClassName += " outerInfobox-animation";
+        }
+
+        this.outerRef = React.createRef();
 
         return (
-            <div className={"outerInfobox text-align-center " + this.props.className}>
+            <div className={outerClassName} ref={this.outerRef}>
                 <div className="buttonMenu">
                     <span>
                         {this.props.buttons.map(item => React.cloneElement(item,
@@ -69,8 +85,12 @@ export class InfoButton extends React.Component {
     }
 
     render() {
+        let className = "infoButton";
+        if (this.props.isSelected)
+            className += " selected-infoButton";
+
         return (
-            <button type="button" className="infoButton" onClick={() => this.props.onSelect(this)}>{this.props.title}</button>
+            <button type="button" className={className} onClick={() => this.props.onSelect(this)} disabled={this.props.isSelected}>{this.props.title}</button>
         );
     }
 

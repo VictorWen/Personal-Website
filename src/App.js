@@ -28,7 +28,7 @@ class App extends React.Component {
         const ClusterAIButton = (
             <InfoButton title="ClusterAI" id="cluster">
                 <h3>Cluster AI</h3>
-                <img src={clusterAI_demo} alt="Demonstration of clusterAI website from LAHacks" className="projectImg" />
+                <img src={clusterAI_demo} alt="Demonstration of clusterAI website from LAHacks" className="projectImage" />
                 <p>Project that I worked on during the LAHacks hackathon in March 2021. ClusterAI is a visualization tool that represents research papers as spherical nodes in 3D space.
                     A user can input a search query, which the backend will then find research papers related to the search query and then display them in 3D space.
                     Similar research papers are closer to together, and dissimilar papers are farther apart. The user can drag the 3D model around, zoom in and out, and rotate their view.
@@ -83,15 +83,13 @@ class App extends React.Component {
                     But this time, it's sole purpose was to be large, so I could experience working with a large project and with various frameworks. The game uses the Unity game engine.
                     I have been working on and off on this project for a year, accumulating over 7,800 lines of code. Although the project is nowhere near complete nor up to industry standard,
                     I have learned a great deal about software design and engineering.</p>
-                <InfoBox innerClassName="border-1-black" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton, PersonalWebsiteButton]} />
+                <InfoBox className="background-black font-color-white" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton, PersonalWebsiteButton]} />
             </InfoButton>
         );
 
         return (
-            <div>
-                <h1 className="nameplate text-align-center">Victor Wen</h1>
-
-                {/* Menu of buttons. Click to display text below */}
+            <div className="text-align-center">
+                <h1 className="nameplate">Victor Wen</h1>
                 <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" />
             </div>
         );
