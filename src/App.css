@@ -1,23 +1,27 @@
 .buttonMenu {
-    display: inline-block;
-    margin: 5px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .infoButton {
     width: 250px;
     height: 50px;
     margin: 10px;
+    margin-top: 10px;
     background-color: white;
     border: none;
     font-size: 18px;
-    font-weight: bold;
-    color: rgb(65, 65, 65);
+    font-weight: bolder;
+    /* color: rgb(65, 65, 65); */
+    color: rgb(0, 184, 184);
     border-radius: 8px;
 }
 
 .selected-infoButton {
-    background-color: gray;
-    color: white;
+    background-color: gray !important;
+    color: cyan !important;
 }
 
 .infobox {
@@ -52,12 +56,12 @@
 
 .outerInfobox-animation {
     animation-duration: 1s;
-    animation-name: extend;
+    animation-name: jump;
 }
 
-@keyframes extend {
+@keyframes jump {
     35% {
-        transform: translateY(-15px)
+        transform: translateY(-10px)
     }
 }
 
@@ -93,17 +97,25 @@ p {
 }
 
 .font-color-white {
-    color: white;
+    font-weight: bold;
+    color: cyan;
 }
 
 body {
     background-color: rgb(122, 122, 122);
-    color: white;
+    color: rgb(0, 255, 255);;
     animation-duration: 2s;
     animation-name: enlarge;
+    line-height: 1.6;
 }
 
 .projectImage {
     height: 300px;
     border: 4px solid rgb(49, 49, 49);
+}
+
+.github{
+    font-size: 20px;
+    color: inherit;
+    font-weight: bold;
 }

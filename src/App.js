@@ -59,7 +59,7 @@ class App extends React.Component {
         );
 
         const MusicGenreButton = (
-            <InfoButton title="Music Genre Classification" id="musicgenre">
+            <InfoButton title="Music Genre Classification TEST TEST TES TES TEST T TES TES T TESTT TEST" id="musicgenre">
                 <h3>Automatic Music Genre Classification</h3>
             </InfoButton>
         );
@@ -90,7 +90,8 @@ class App extends React.Component {
         return (
             <div className="text-align-center">
                 <h1 className="nameplate">Victor Wen</h1>
-                <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" />
+                <a className="github" href="https://github.com/VictorWen" target="_blank" rel="noreferrer">https://github.com/VictorWen</a>
+                <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" className="font-color-white"/>
             </div>
         );
     }

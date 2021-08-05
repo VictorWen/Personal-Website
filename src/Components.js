@@ -40,16 +40,14 @@ export class InfoBox extends React.Component {
         return (
             <div className={outerClassName} ref={this.outerRef}>
                 <div className="buttonMenu">
-                    <span>
-                        {this.props.buttons.map(item => React.cloneElement(item,
-                            {
-                                key: item.props.id,
-                                id: item.props.id,
-                                onSelect: (btn) => this.setSelectedButton(btn),
-                                isSelected: item.props.id === this.state.selected
-                            }
-                        ))}
-                    </span>
+                    {this.props.buttons.map(item => React.cloneElement(item,
+                        {
+                            key: item.props.id,
+                            id: item.props.id,
+                            onSelect: (btn) => this.setSelectedButton(btn),
+                            isSelected: item.props.id === this.state.selected
+                        }
+                    ))}
                 </div>
                 <div>
                     <div className={infoboxClassNames} onAnimationEnd={() => this.onAnimationEnd()}>
