@@ -2,7 +2,12 @@ import React from 'react';
 import './App.css'
 
 export class InfoBox extends React.Component {
-    state = { info: <h3>{this.props.defaultText}</h3>, selected: this.props.selected, animation: false }
+    state = { info: <h2>{this.props.defaultText}</h2>, selected: this.props.selected, animation: false }
+
+    constructor(props) {
+        super(props);
+        this.attachInnerRef = (element) => this.innerRef = element;
+    }
 
     setSelectedButton(button) {
         if (this.props.saveChanges)
@@ -35,10 +40,8 @@ export class InfoBox extends React.Component {
             outerClassName += " outerInfobox-animation";
         }
 
-        this.outerRef = React.createRef();
-
         return (
-            <div className={outerClassName} ref={this.outerRef}>
+            <div className={outerClassName}>
                 <div className="buttonMenu">
                     {this.props.buttons.map(item => React.cloneElement(item,
                         {
@@ -50,7 +53,7 @@ export class InfoBox extends React.Component {
                     ))}
                 </div>
                 <div>
-                    <div className={infoboxClassNames} onAnimationEnd={() => this.onAnimationEnd()}>
+                    <div className={infoboxClassNames} onAnimationEnd={() => this.onAnimationEnd()} ref={this.attachInnerRef}>
                         {this.state.info}
                     </div>
                 </div>
@@ -69,7 +72,6 @@ export class InfoButton extends React.Component {
                 this.state = { info: this.props.children.props };
         if (props.isSelected)
             this.props.onSelect(this);
-        this.isReactElement = true;
     }
 
     saveInfo(index, props) {

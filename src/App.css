@@ -20,14 +20,14 @@
 }
 
 .selected-infoButton {
-    background-color: gray !important;
-    color: cyan !important;
+    background-color: rgb(0, 184, 184) !important;
+    color: white !important;
 }
 
 .infobox {
     display: inline-block;
     padding: 10px;   
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .infobox-animation {
@@ -48,8 +48,8 @@
 .outerInfobox {
     display: inline-block;
     width: 90%;
-    background-color: rgb(58, 58, 58);
-    border-radius: 20px;
+    background-color: rgb(0, 0, 0, 0.75);
+    border-radius: 30px;
     padding: 20px;
     margin: 20px;
 }
@@ -98,24 +98,49 @@ p {
 
 .font-color-white {
     font-weight: bold;
-    color: cyan;
+    color: white;
 }
 
 body {
-    background-color: rgb(122, 122, 122);
-    color: rgb(0, 255, 255);;
+    background-image: url('/src/code_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
     animation-duration: 2s;
     animation-name: enlarge;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .projectImage {
     height: 300px;
     border: 4px solid rgb(49, 49, 49);
+    border-radius: 10px;
+    transition: height ease-in 0.75s;
+}
+
+.projectImage:hover {
+    height: 500px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 5px;
+}
+
+.topplate {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 25%;
+    border-radius: 30px;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    color: white;
 }
 
 .github{
     font-size: 20px;
-    color: inherit;
+    color: cyan;
     font-weight: bold;
 }

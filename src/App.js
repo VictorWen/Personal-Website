@@ -13,7 +13,7 @@ class App extends React.Component {
         const AboutMeButton = (
             <InfoButton title="About Me" isSelected={true} id="aboutme">
                 <h2>About Me</h2>
-                <p>I am a undergrad computer science major currently studying at the University of California - Los Angeles.
+                <p>&emsp;I am a undergrad computer science major currently studying at the University of California - Los Angeles.
                     I am deeply fascinated with computer science and software engineering because I love solving difficult challenges.
                     To me, computers are all about solving problems.
                     I love working with theory and princples to logically deduce key points of some data and or a design.
@@ -27,18 +27,18 @@ class App extends React.Component {
 
         const ClusterAIButton = (
             <InfoButton title="ClusterAI" id="cluster">
-                <h3>Cluster AI</h3>
+                <h2>Cluster AI</h2>
                 <img src={clusterAI_demo} alt="Demonstration of clusterAI website from LAHacks" className="projectImage" />
-                <p>Project that I worked on during the LAHacks hackathon in March 2021. ClusterAI is a visualization tool that represents research papers as spherical nodes in 3D space.
+                <p>&emsp;Project that I worked on during the LAHacks hackathon in March 2021. ClusterAI is a visualization tool that represents research papers as spherical nodes in 3D space.
                     A user can input a search query, which the backend will then find research papers related to the search query and then display them in 3D space.
                     Similar research papers are closer to together, and dissimilar papers are farther apart. The user can drag the 3D model around, zoom in and out, and rotate their view.
                     Upon clicking on a node, the corresponding paper's title, author, abstract, and link are presented to the user.</p>
-                <p>ClusterAI uses CORE resarch paper API to query and access a database of research papers and their metadata.
+                <p>&emsp;ClusterAI uses CORE resarch paper API to query and access a database of research papers and their metadata.
                     The metadata is then fed into a BERT-based machine learning model that converts the research paper's abstract and title into a series of word encodings.
                     These encoding provide a numerical representation of the sentence that encapsulates the sentence's semantic meaning.
                     The encodings for the retrieved papers are then fed into a Multidimensional Scaler which compresses the word encodings into a 3D point.
                     Finally, a JavaScipt 3D visualization tool is used to draw the 3D points in a Django served webpage.</p>
-                <p>I researched, designed, and built the machine learning and multidimensional scaling pipeline that converts the research paper metadata into 3D points.
+                <p>&emsp;I researched, designed, and built the machine learning and multidimensional scaling pipeline that converts the research paper metadata into 3D points.
                     From my research, I concluded that a BERT-based machine learning model would best encapsulate the semantic meaning of the research paper, enabling the
                     final 3D points to be most accurate. I also chose a multidimensional scaler for the fact that is motiviation is to preserve the distances between the inputted vectors
                     as much as possible. Meaning, if papers are deemed semantic dissimilar by the BERT model, then the multidimensional scaler will also try to keep the papers spatially dissimilar.</p>
@@ -47,33 +47,33 @@ class App extends React.Component {
 
         const ColoniaButton = (
             <InfoButton title="Colonia Unity Game" id="colonia">
-                <h3>Colonia Unity Game</h3>
+                <h2>Colonia Unity Game</h2>
                 <p></p>
             </InfoButton>
         );
 
         const CookyAppButton = (
             <InfoButton title="Cooky Website" id="cooky">
-                <h3>Cooky Website</h3>
+                <h2>Cooky Website</h2>
             </InfoButton>
         );
 
         const MusicGenreButton = (
-            <InfoButton title="Music Genre Classification TEST TEST TES TES TEST T TES TES T TESTT TEST" id="musicgenre">
-                <h3>Automatic Music Genre Classification</h3>
+            <InfoButton title="Music Genre Classification" id="musicgenre">
+                <h2>Automatic Music Genre Classification</h2>
             </InfoButton>
         );
 
         const PersonalWebsiteButton = (
             <InfoButton title="This Personal Website" id="personal">
-                <h3>This Personal Website</h3>
+                <h2>This Personal Website</h2>
             </InfoButton>
         );
 
         const ExperienceButton = (
             <InfoButton title="Experience" id="experience">
                 <h2>Experience</h2>
-                <p>Almost all of my projects come from personal projects that were designed with the intent of learning something new.
+                <p>&emsp;Almost all of my projects come from personal projects that were designed with the intent of learning something new.
                     My early expeditions into computer science involved understanding the basics of programming and object-oriented design.
                     Such projects include a simple text-based graphics engine and a short video game. Both of which developed my understanding of
                     how an object-oriented design organizes different pieces of the program, and how those pieces became integrated together.
@@ -89,8 +89,13 @@ class App extends React.Component {
 
         return (
             <div className="text-align-center">
-                <h1 className="nameplate">Victor Wen</h1>
-                <a className="github" href="https://github.com/VictorWen" target="_blank" rel="noreferrer">https://github.com/VictorWen</a>
+                <div className="topplate">
+                    <h1 className="nameplate">Victor Wen</h1>
+                    <h3>email@email.com <br/>
+                    University of California - Los Angeles <br/>
+                    LinkedIn <br/></h3>
+                    <a className="github" href="https://github.com/VictorWen" target="_blank" rel="noreferrer">https://github.com/VictorWen</a>
+                </div>
                 <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" className="font-color-white"/>
             </div>
         );
