@@ -27,6 +27,7 @@ export class InfoBox extends React.Component {
     }
 
     render() {
+        console.log("INFOBOX RERENDER");
         let infoboxClassNames = "infobox";
         if (this.props.innerClassName)
             infoboxClassNames += " " + this.props.innerClassName;
@@ -85,6 +86,7 @@ export class InfoButton extends React.Component {
     }
 
     render() {
+        console.log("INFOBUTTON RERENDER");
         let className = "infoButton";
         if (this.props.isSelected)
             className += " selected-infoButton";

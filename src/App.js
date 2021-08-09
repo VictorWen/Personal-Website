@@ -10,18 +10,30 @@ class App extends React.Component {
     }
 
     render() {
+        console.log("APP RERENDER");
         const AboutMeButton = (
             <InfoButton title="About Me" isSelected={true} id="aboutme">
                 <h2>About Me</h2>
-                <p>&emsp;I am a undergrad computer science major currently studying at the University of California - Los Angeles.
-                    I am deeply fascinated with computer science and software engineering because I love solving difficult challenges.
-                    To me, computers are all about solving problems.
-                    I love working with theory and princples to logically deduce key points of some data and or a design.
-                    I love the flames of creativity that inspire unique ideas and algorithms.
-                    I love meticulously assembling each gear of a practical application that
-                    deploys all the theories and all the ideas from before,
-                    to craft an elegant and flexible solution.
-                    But most of all, I love learning and experiencing new concepts, theories, algorithms, etc. each time I undergo this process.</p>
+                <p>
+                    I am an undergraduate Computer Science major who loves tackling difficult challenges. 
+                    The more difficult the challenge, the more I become obsessed with it. 
+                    To me, challenges are opportunities to shape my potential. 
+                    I get to engage in logical deduction, teamwork, critical thinking, and creative application. 
+                    Each new challenge cultivates these skills and readies me to tackle more demanding challenges.
+                </p>
+                <p>
+                    In a sense, computers are an endless well of difficult challenges. 
+                    Computers are powerful, wide-reaching tools used by almost all industries and fields of research. 
+                    As a result, computers are burdened with mountains of difficult perplexing challenges. 
+                    It sometimes takes a combination of years of research, well-knit teamwork, and ingenious computer science to solve some of these challenges. 
+                    In other words, I could never be bored with a career like this.
+                </p>
+                <p>
+                    Currently, I am studying at the University of California - Los Angeles, 
+                    where I eagerly learn about Object-Oriented Programming, computer organization, algorithms, data structures, and more. 
+                    The know-how I continue to develop at UCLA, supplemented by my own expeditions into computer science, 
+                    will greatly prepare me to properly engage with any new challenges this career path will throw at me.
+                </p>
             </InfoButton>
         );
 
@@ -88,15 +100,20 @@ class App extends React.Component {
         );
 
         return (
-            <div className="text-align-center">
-                <div className="topplate">
-                    <h1 className="nameplate">Victor Wen</h1>
-                    <h3>email@email.com <br/>
-                    University of California - Los Angeles <br/>
-                    LinkedIn <br/></h3>
-                    <a className="github" href="https://github.com/VictorWen" target="_blank" rel="noreferrer">https://github.com/VictorWen</a>
+            <div>
+                <div className="background"/>
+                <div className="text-align-center start-animation">
+                    <div className="topplate">
+                        <h1 className="nameplate">Victor Wen</h1>
+                        <h3>
+                            <a href="mailto:xiaoyuvictor@gmail.com" className="link">xiaoyuvictor@gmail.com</a><br/>
+                            <a href="mailto:vicwen02@g.ucla.edu" className="link">vicwen02@g.ucla.edu</a><br/>
+                            <a className="link" href="https://www.linkedin.com/in/victor-wen-51443b1b9/" target="_blank" rel="noreferrer">LinkedIn</a><br/>
+                            <a className="link" href="https://github.com/VictorWen" target="_blank" rel="noreferrer">GitHub</a>
+                        </h3>
+                    </div>
+                    <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" className="font-color-white"/>
                 </div>
-                <InfoBox buttons={[AboutMeButton, ExperienceButton]} selected="aboutme" className="font-color-white"/>
             </div>
         );
     }
