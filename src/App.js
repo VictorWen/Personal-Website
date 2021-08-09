@@ -10,7 +10,7 @@ class App extends React.Component {
     }
 
     render() {
-        console.log("APP RERENDER");
+        // console.log("APP RERENDER");
         const AboutMeButton = (
             <InfoButton title="About Me" isSelected={true} id="aboutme">
                 <h2>About Me</h2>
@@ -91,7 +91,7 @@ class App extends React.Component {
                     These projects were focused on learning as much as possible about a subject rather than creating a functioning product. 
                     As such, I have  experience with a variety of areas in computer science, including:
                     <div className="threeColList">
-                        <ul>
+                        <ul className="colList">
                             <h3>Knowledge Areas:</h3>
                             <li>Machine Learning</li>
                             <li>Object-Oriented Programming</li>
@@ -100,7 +100,7 @@ class App extends React.Component {
                             <li>Web Development (both backend and frontend)</li>
                             <li>Networking (RESTful APISs)</li>
                         </ul>
-                        <ul>
+                        <ul className="colList">
                             <h3>Programming languages:</h3>
                             <li>Java</li>
                             <li>JavaScript</li>
@@ -110,7 +110,7 @@ class App extends React.Component {
                             <li>Octave/MATLAB</li>
                             <li>POSIX Shell Scripting</li>
                         </ul>
-                        <ul>
+                        <ul className="colList">
                             <h3>Frameworks, Libraries, and Tools:</h3>
                             <li>Node.js (Express, React, Firebase)</li>
                             <li>Unity Game Engine</li>
@@ -131,7 +131,8 @@ class App extends React.Component {
                 <div className="text-align-center start-animation">
                     <div className="topplate">
                         <h1 className="nameplate">Victor Wen</h1>
-                        <h3>
+                        <h2 className="studentPlate">Undergrad at University of California - Los Angeles</h2>
+                        <h3 className="contactInfo">
                             <a href="mailto:xiaoyuvictor@gmail.com" className="link">xiaoyuvictor@gmail.com</a><br/>
                             <a href="mailto:vicwen02@g.ucla.edu" className="link">vicwen02@g.ucla.edu</a><br/>
                             <a className="link" href="https://www.linkedin.com/in/victor-wen-51443b1b9/" target="_blank" rel="noreferrer">LinkedIn</a><br/>
