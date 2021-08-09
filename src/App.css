@@ -25,11 +25,13 @@
 }
 
 .infobox {
-    /* display: inline-block; */
+    display: inline-block;
+    text-align: center;
     padding: 3em;
     padding-left: 5em;
     padding-right: 5em;
     font-size: 18px;
+    transform-origin: top;
 }
 
 .infobox-animation {
@@ -81,24 +83,8 @@ p {
     text-align: center;
 }
 
-.border-1-black {
-    border: 1px solid black;
-}
-
-.border-1-white {
-    border: 1px solid white;
-}
-
 .background-black {
     background-color: black;
-}
-
-.background-darkgray {
-    background-color: darkgray;
-}
-
-.background-gray {
-    background-color: gray;
 }
 
 .font-color-white {
@@ -129,14 +115,15 @@ body {
 }
 
 .projectImage {
-    height: 300px;
+    image-resolution: from-image;
+    width: 30vw;
     border: 4px solid rgb(49, 49, 49);
     border-radius: 10px;
-    transition: height ease-in 0.75s;
+    transition: width ease-in 0.75s;
 }
 
 .projectImage:hover {
-    height: 500px;
+    width: 50vw;
 }
 
 h1 {
@@ -146,7 +133,7 @@ h1 {
 
 .topplate {
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
     width: 25%;
     border-radius: 30px;
     padding: 5px;
@@ -159,4 +146,9 @@ h1 {
     /* font-size: 20px; */
     color: cyan;
     font-weight: bold;
+}
+
+.threeColList {
+    display: inline-flex;
+    text-indent: 0;
 }

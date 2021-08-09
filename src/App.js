@@ -85,16 +85,42 @@ class App extends React.Component {
         const ExperienceButton = (
             <InfoButton title="Experience" id="experience">
                 <h2>Experience</h2>
-                <p>&emsp;Almost all of my projects come from personal projects that were designed with the intent of learning something new.
-                    My early expeditions into computer science involved understanding the basics of programming and object-oriented design.
-                    Such projects include a simple text-based graphics engine and a short video game. Both of which developed my understanding of
-                    how an object-oriented design organizes different pieces of the program, and how those pieces became integrated together.
-                    I have experience with machine learning and data science. Projects in this area include a music-genre classification app, a March Madness prediction app,
-                    and a basic machine learning Java library. Recently, I have been working on various web applications. These include cookbook MERN-like website,
-                    this personal website, and a AI-based research paper visualization application. Finally, the biggest project I have been working on is another video game.
-                    But this time, it's sole purpose was to be large, so I could experience working with a large project and with various frameworks. The game uses the Unity game engine.
-                    I have been working on and off on this project for a year, accumulating over 7,800 lines of code. Although the project is nowhere near complete nor up to industry standard,
-                    I have learned a great deal about software design and engineering.</p>
+                <p>
+                    I have been involved with computer science since 2016, 
+                    working on various projects in conjunction with taking computer science classes in high school and UCLA. 
+                    These projects were focused on learning as much as possible about a subject rather than creating a functioning product. 
+                    As such, I have  experience with a variety of areas in computer science, including:
+                    <div className="threeColList">
+                        <ul>
+                            <h3>Knowledge Areas:</h3>
+                            <li>Machine Learning</li>
+                            <li>Object-Oriented Programming</li>
+                            <li>Software Design Patterns</li>
+                            <li>Algorithms and Data Structures</li>
+                            <li>Web Development (both backend and frontend)</li>
+                            <li>Networking (RESTful APISs)</li>
+                        </ul>
+                        <ul>
+                            <h3>Programming languages:</h3>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>C/C++</li>
+                            <li>C#</li>
+                            <li>Python</li>
+                            <li>Octave/MATLAB</li>
+                            <li>POSIX Shell Scripting</li>
+                        </ul>
+                        <ul>
+                            <h3>Frameworks, Libraries, and Tools:</h3>
+                            <li>Node.js (Express, React, Firebase)</li>
+                            <li>Unity Game Engine</li>
+                            <li>Discord RESTful API (discord.py and discord.js)</li>
+                            <li>Python Machine Learning libraries (SciKit-Learn, PyTorch, Tensorflow, and OpenCV)</li>
+                            <li>HTML + CSS</li>
+                            <li>Shell Commands</li>
+                        </ul>
+                    </div>
+                </p>
                 <InfoBox className="background-black font-color-white" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, CookyAppButton, MusicGenreButton, PersonalWebsiteButton]} />
             </InfoButton>
         );
