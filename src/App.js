@@ -42,7 +42,7 @@ class App extends React.Component {
         const ClusterAIButton = (
             <InfoButton title="ClusterAI" id="cluster">
                 <h2>Cluster AI</h2>
-                <h3><a className="link" href="https://github.com/RahulR100/LAHacks2021" target="_blank" rel="noreferrer">GitHub link</a></h3>
+                <h3><a className="link" href="https://github.com/RahulR100/LAHacks2021" target="_blank" rel="noreferrer">GitHub page</a></h3>
                 <img src={clusterAI_demo} alt="Demonstration of clusterAI website from LAHacks" className="projectImage" />
                 <p>
                     Project that I worked on during the LAHacks hackathon in March 2021. 
@@ -72,7 +72,7 @@ class App extends React.Component {
         const ColoniaButton = (
             <InfoButton title="Colonia Unity Game" id="colonia">
                 <h2>Colonia Unity Game</h2>
-                <h3><a className="link" href="https://github.com/VictorWen/Colonia" target="_blank" rel="noreferrer">GitHub link</a></h3>
+                <h3><a className="link" href="https://github.com/VictorWen/Colonia" target="_blank" rel="noreferrer">GitHub page</a></h3>
                 <img src={colonia_demo} alt="Colonia's terrain map" className="projectImage" />
                 <p>
                     Colonia is a resource management, colony building video game that I started work on in August 2020. 
@@ -138,7 +138,7 @@ class App extends React.Component {
         const MegaphoneButton = (
             <InfoButton title="Megaphone" id="megaphone">
                 <h2>Megaphone</h2>
-                <h3><a className="link" href="https://github.com/VictorWen/Megaphone" target="_blank" rel="noreferrer">GitHub link</a></h3>
+                <h3><a className="link" href="https://github.com/VictorWen/Megaphone" target="_blank" rel="noreferrer">GitHub page</a></h3>
                 <img src={megaphone_pic} className="projectImage" alt="Megaphone logo"/>
                 <p>
                     Megaphone is a Discord bot that plays personalized fanfare that I made in Janurary 2021. 
@@ -161,6 +161,24 @@ class App extends React.Component {
         const PersonalWebsiteButton = (
             <InfoButton title="Personal React Website" id="personal">
                 <h2>This Personal Website</h2>
+                <h3><a className="link" href="https://github.com/VictorWen/Personal-Website" target="_blank" rel="noreferrer">GitHub page</a></h3>
+                <p>
+                    This personal website was built on React and served as an introduction to HTML/CSS and frontend web development for me. 
+                    I gave myself challenges for building this website to help me better learn about HTML/CSS and React, 
+                    including animations, transitions, flex boxes, hover effects, scaliability, backgrounds, buttons, and modular React components. 
+                    Additionally, the entire website is delivered via a single page with dynamic text provided via React/JavaScript.
+                </p>
+                <p>
+                    Modular components (InfoBox and InfoButton) can be seen with the buttons and the text they change. 
+                    InfoBox is the black contrainer this text currently is in. 
+                    Each InfoBox contains an area for text and an area for InfoButtons (the buttons with the project titles). 
+                    Each InfoButton relays text to the InfoBox for it to display in the text area. 
+                    The design is such that InfoButton and InfoBox can display any arbitrary HTML and be assigned any CSS class. 
+                    Additionally, another challenge was for the button to remember their state when they are click off. 
+                    This is done by a callback that the children of the InfoButton can call to update the save state of the button. 
+                    For example, if you click on “About Me” at the top of the page and then click back on “Experience,” 
+                    this “This Personal Website” text will still be shown as the Personal Website button remembers that it was selected.
+                </p>
             </InfoButton>
         );
 
