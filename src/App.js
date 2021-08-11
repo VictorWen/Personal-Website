@@ -75,7 +75,7 @@ class App extends React.Component {
                 <h3><a className="link" href="https://github.com/VictorWen/Colonia" target="_blank" rel="noreferrer">GitHub page</a></h3>
                 <img src={colonia_demo} alt="Colonia's terrain map" className="projectImage" />
                 <p>
-                    Colonia is a resource management, colony building video game that I started work on in August 2020. 
+                    Colonia is a resource management, colony building video game that I started work on in August 2020 and continued into Summer 2021. 
                     Built on the Unity game engine, Colonia is written in C#. 
                     My goal for Colonia was twofold:
                     <ol>
@@ -147,7 +147,7 @@ class App extends React.Component {
                     and stores each personalized configuration in an online database. 
                     Megaphone is built on the discord.py API to communicate with Discord, get user interaction, and send the fanfare audio bytes. 
                     Currently Megaphone is published on a Discord bot catalog website called <a className="link" href="https://top.gg/bot/803491378326667285" target="_blank" rel="noreferrer">top.gg</a>, 
-                    and is being used in over 40+ Discord servers, with over 100+ users. 
+                    and is being used in over 50+ Discord servers, with over 300+ users. 
                 </p>
             </InfoButton>
         );
@@ -198,7 +198,7 @@ class App extends React.Component {
                             <li>Software Design Patterns</li>
                             <li>Algorithms and Data Structures</li>
                             <li>Web Development (both backend and frontend)</li>
-                            <li>Networking (RESTful APISs)</li>
+                            <li>Networking</li>
                         </ul>
                         <ul className="colList">
                             <h3>Programming languages:</h3>
@@ -221,8 +221,8 @@ class App extends React.Component {
                         </ul>
                     </div>
                 </p>
-                <h3>Below are some of the projects I have worked on.</h3>
-                <InfoBox className="background-black font-color-white" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, MegaphoneButton, MusicGenreButton, PersonalWebsiteButton]} />
+                <h2>Below are some of the recent projects I have worked on.</h2>
+                <InfoBox className="background-black font-color-white" defaultText="Select a project for further information." buttons={[ColoniaButton, ClusterAIButton, MegaphoneButton, /*MusicGenreButton,*/ PersonalWebsiteButton]} />
             </InfoButton>
         );
 
